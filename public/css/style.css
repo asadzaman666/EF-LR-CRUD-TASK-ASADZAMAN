@@ -64,3 +64,11 @@ html, body {
     margin-bottom: 1.25rem;
     color: #999;
   }
+
+  /*
+  * Textarea
+  */
+
+  textarea {
+    height: 100%;
+  }
