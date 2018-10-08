@@ -7,6 +7,11 @@ use \App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -80,10 +85,17 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $user = auth()->user();
+
         $posts = Post::findorfail($id);
 
-        return view('edit')
+        if($posts->user_id == $user->id) {
+            return view('edit')
             ->with('post', $posts);
+        } else {
+            return back();
+        }
+
     }
 
     /**
