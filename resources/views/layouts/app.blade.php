@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -27,9 +28,14 @@
                     <li class="nav-brand">
                     <a class="nav-link" href="{{url('/')}}">{{config('app.name')}}</a>
                     </li>
+                    @if (Auth::user())
                     <li class="nav-item">
-                        <a class="nav-link" href={{url('/home')}}>Home</a>
-                    </li>
+                            <a class="nav-link" href={{url('/home')}}>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{url('/posts')}}>My Posts</a>
+                        </li>
+                    @endif
                 </ul>
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name') }}

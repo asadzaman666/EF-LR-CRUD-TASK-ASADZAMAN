@@ -8,15 +8,18 @@
                         All the recent posts
                     </h3>
                 
-               <div class="blog-post">
-                   <div class="blog-post-title">
-                       This is a blog post
-                   </div>
-                   <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-                   <p>
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex quae accusantium eum impedit vitae modi eius, molestias maiores tempore. Perferendis officiis temporibus omnis culpa iusto aliquid nobis, debitis pariatur.
-                   </p>
-               </div>
+                    @foreach ($post as $p)
+                        <div class="blog-post">
+                            <div class="blog-post-title">
+                                {{$p->title}}
+                            </div>
+                            <p class="blog-post-meta">{{$p->created_at}}</p>
+                            <p>
+                                {{$p->description}}
+                            </p>
+                        </div>
+                    @endforeach
+
             </div>
         </div>
     </div>

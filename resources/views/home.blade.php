@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create new post') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('post.store') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -29,7 +29,7 @@
                                     <label for="description" class="col-sm-4 col-form-label text-md-right">{{ __('Description') }}</label>
     
                                     <div class="col-md-6">
-                                        <textarea id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="" required autofocus></textarea>
+                                        <textarea id="description"  class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="" required autofocus></textarea>
     
                                         @if ($errors->has('description'))
                                             <span class="invalid-feedback" role="alert">
@@ -44,32 +44,16 @@
                                     <button type="Submit" class="btn btn-primary">
                                         {{ __('Post') }}
                                     </button>
+                                </div> <br>
+                                @if (session('status'))
+                                <div class="col-md-6 offset-md-4 justify-content-center alert alert-success" role="alert">
+                                    {{ session('status') }}
                                 </div>
+                                @endif
                             </div>
                         </form>
                     </div>
                 </div>
                 <br>
-    <div class="card">
-            <div class="card-header">My posts</div>
-
-            <div class="card-body">
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-                <div class="blog-post">
-                    <div class="blog-post-title">
-                        This is a blog post
-                    </div>
-                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex quae accusantium eum impedit vitae modi eius, molestias maiores tempore. Perferendis officiis temporibus omnis culpa iusto aliquid nobis, debitis pariatur.
-                    </p>
-                </div>
-            </div>
-        </div>
 </div>
 @endsection
