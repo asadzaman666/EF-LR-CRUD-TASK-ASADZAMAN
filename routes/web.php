@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/posts', 'PostController@store')->name('post.store');
-Route::get('/show', 'PostController@show')->name('post.show');
 Route::get('/posts', 'PostController@index')->name('post.index');
-Route::delete('/posts/{id}', 'PostController@destroy')->name('post.destroy');
+Route::post('/posts', 'PostController@store')->name('post.store');
+Route::get('/post/{id}', 'PostController@edit')->name('post.edit');
+Route::delete('/post/{id}', 'PostController@destroy')->name('post.destroy');
+Route::put('/post/{id}', 'PostController@update')->name('post.update');
+

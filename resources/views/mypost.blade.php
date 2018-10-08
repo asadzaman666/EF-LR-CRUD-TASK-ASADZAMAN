@@ -20,7 +20,7 @@
                                           </p>
                                     </div>
                                     <div class="action-forms">
-                                          <form action="" method="get">
+                                          <form action="{{route('post.edit', $p->id)}}" method="get">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="btn btn-white">Update</button>

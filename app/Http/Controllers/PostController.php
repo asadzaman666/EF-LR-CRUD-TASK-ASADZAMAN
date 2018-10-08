@@ -80,7 +80,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $posts = Post::findorfail($id);
+
+        return view('edit')
+            ->with('post', $posts);
     }
 
     /**
@@ -92,7 +95,22 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate ([
+            'title' => 'required | max: 100',
+            'description' => 'required',
+        ]);
+
+        $user = auth()->user();
+
+        $posts = Post::findorfail($id);
+
+        $posts->title = $request->title;
+        $posts->description = $request->description;
+        $posts->user_id = $user->id;
+        
+        $posts->save();
+        
+        return back()->with('status', 'Post Updated!');
     }
 
     /**

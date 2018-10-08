@@ -13,7 +13,7 @@
                             <div class="blog-post-title">
                                 {{$p->title}}
                             </div>
-                            <p class="blog-post-meta">{{$p->created_at}}</p>
+                        <p class="blog-post-meta">{{$p->created_at}} by<a href="#"> {{$p->user->name}}</a></p>
                             <p>
                                 {{$p->description}}
                             </p>
