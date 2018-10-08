@@ -1,4 +1,28 @@
-<!doctype html>
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <h3 class="pb-3 mb-4 font-italic border-bottom">
+                        All the recent posts
+                    </h3>
+                
+               <div class="blog-post">
+                   <div class="blog-post-title">
+                       This is a blog post
+                   </div>
+                   <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+                   <p>
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex quae accusantium eum impedit vitae modi eius, molestias maiores tempore. Perferendis officiis temporibus omnis culpa iusto aliquid nobis, debitis pariatur.
+                   </p>
+               </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -7,61 +31,10 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,700,900,600" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -79,20 +52,21 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                           <div class="blog-post">
+                               <div class="blog-post-title">
+                                   This is a blog post
+                               </div>
+                               <p>
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex quae accusantium eum impedit vitae modi eius, molestias maiores tempore. Perferendis officiis temporibus omnis culpa iusto aliquid nobis, debitis pariatur.
+                               </p>
+                           </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
+
     </body>
-</html>
+</html> --}}
