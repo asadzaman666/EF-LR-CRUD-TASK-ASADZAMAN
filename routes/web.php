@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/posts', 'PostController@store')->name('post.store');
 Route::get('/show', 'PostController@show')->name('post.show');
 Route::get('/posts', 'PostController@index')->name('post.index');
+Route::delete('/posts/{id}', 'PostController@destroy')->name('post.destroy');

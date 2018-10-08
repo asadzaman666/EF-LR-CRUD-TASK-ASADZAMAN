@@ -9,10 +9,6 @@
 
     <title>{{ config('app.name') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
@@ -92,6 +88,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/alert.js') }}" defer></script>
     </div>
 </body>
 </html>

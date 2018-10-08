@@ -105,7 +105,7 @@ class PostController extends Controller
     {
         $post = Post::findorfail($id);
 
-        post.destroy();
+        $post->delete();
 
         return back();
     }

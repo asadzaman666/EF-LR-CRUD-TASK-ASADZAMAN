@@ -54,14 +54,14 @@ html, body {
  * Blog posts
  */
 .blog-post {
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
   }
   .blog-post-title {
     margin-bottom: .25rem;
     font-size: 2.5rem;
   }
   .blog-post-meta {
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     color: #999;
   }
 
@@ -71,4 +71,9 @@ html, body {
 
   textarea {
     height: 100%;
+  }
+
+  .action-forms form {
+      display: inline-block;
+      margin: 5px;
   }

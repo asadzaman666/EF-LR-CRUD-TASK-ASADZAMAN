@@ -18,9 +18,22 @@
                                           <p>
                                                 {{$p->description}}
                                           </p>
-                                          </div>
+                                    </div>
+                                    <div class="action-forms">
+                                          <form action="" method="get">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-white">Update</button>
+                                          </form>
+                                    <form action="{{route('post.destroy', $p->id)}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger" onclick="return confirm('Post will be deleted!')">Delete</button>
+                                          </form>
+                                    </div>      
+                                    <hr>
                                     @endforeach
-                                    
+
                               </div>
                         </div>                       
                   </div>

@@ -44,9 +44,9 @@
                                     <button type="Submit" class="btn btn-primary">
                                         {{ __('Post') }}
                                     </button>
-                                </div> <br>
+                                </div> 
                                 @if (session('status'))
-                                <div class="col-md-6 offset-md-4 justify-content-center alert alert-success" role="alert">
+                                <div class="col-md-2 offset-md-6 justify-content-center alert alert-success" role="alert">
                                     {{ session('status') }}
                                 </div>
                                 @endif
