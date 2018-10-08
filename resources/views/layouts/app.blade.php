@@ -7,25 +7,38 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-brand">
+                    <a class="nav-link" href="{{url('/')}}">{{config('app.name')}}</a>
+                    </li>
+                    @if (Auth::user())
+                    <li class="nav-item">
+                            <a class="nav-link" href={{url('/home')}}>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{url('/posts')}}>My Posts</a>
+                        </li>
+                    @endif
+                </ul>
+                {{-- <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name') }}
                 </a>
+                <a class="navbar-brand" href="{{url('/home')}}">
+                    Home
+                </a> --}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -75,6 +88,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/alert.js') }}" defer></script>
     </div>
 </body>
 </html>

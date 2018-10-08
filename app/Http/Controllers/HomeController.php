@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\User;
+use \App\Post;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -24,5 +25,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+
+    }
+
+    public function welcome()
+    {
+        $posts = Post::all()
+            ->sortByDesc('created_at');
+
+        return view('welcome')
+            ->with('post', $posts);
     }
 }
